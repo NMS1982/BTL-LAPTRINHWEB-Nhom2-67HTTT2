@@ -1,0 +1,132 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    background:
+        radial-gradient(ellipse at 18% 15%, rgba(80, 107, 255, 0.3), transparent 38%),
+        radial-gradient(ellipse at 85% 85%, rgba(0, 211, 190, 0.16), transparent 34%),
+        #101522;
+    color: #f5f7ff;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.calculator {
+    width: min(100%, 360px);
+    padding: 22px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 26px;
+    background: linear-gradient(145deg, #242b3d, #191f2e);
+    box-shadow:
+        0 28px 70px rgba(0, 0, 0, 0.48),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+#display {
+    display: block;
+    width: 100%;
+    height: 92px;
+    margin: 0 0 20px;
+    padding: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    outline: none;
+    background: #111724;
+    color: #f7f9ff;
+    font: 500 2.4rem/1 "Segoe UI", Arial, sans-serif;
+    text-align: right;
+    box-shadow: inset 0 4px 12px rgba(0, 0, 0, 0.28);
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.buttons button {
+    min-width: 0;
+    height: 58px;
+    border: 1px solid rgba(255, 255, 255, 0.045);
+    border-radius: 15px;
+    background: #30394c;
+    color: #f3f5fc;
+    font: 600 1.2rem/1 "Segoe UI", Arial, sans-serif;
+    cursor: pointer;
+    box-shadow: 0 4px 0 #202737, 0 7px 12px rgba(0, 0, 0, 0.16);
+    transition: transform 120ms ease, background-color 120ms ease, box-shadow 120ms ease;
+}
+
+.buttons button:hover {
+    background: #3c4760;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 #202737, 0 10px 16px rgba(0, 0, 0, 0.2);
+}
+
+.buttons button:active {
+    transform: translateY(3px);
+    box-shadow: 0 1px 0 #202737;
+}
+
+.buttons button.operator {
+    background: #354b70;
+    color: #a9d8ff;
+}
+
+.buttons button.operator:hover {
+    background: #42618e;
+}
+
+.buttons button.clear {
+    background: #743d54;
+    color: #ffd8e4;
+}
+
+.buttons button.clear:hover {
+    background: #914b68;
+}
+
+.buttons button:nth-child(16) {
+    grid-row: span 2;
+    height: auto;
+    background: #247f79;
+    color: #e4fffb;
+    font-size: 1.45rem;
+}
+
+.buttons button:nth-child(16):hover {
+    background: #2b9b91;
+}
+
+@media (max-width: 400px) {
+    body {
+        padding: 16px;
+    }
+
+    .calculator {
+        padding: 18px;
+    }
+
+    .buttons {
+        gap: 10px;
+    }
+
+    .buttons button {
+        height: 54px;
+    }
+
+    .buttons button:nth-child(16) {
+        height: auto;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .buttons button {
+        transition: none;
+    }
+}
