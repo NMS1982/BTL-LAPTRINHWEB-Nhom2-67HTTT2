@@ -15,7 +15,7 @@
             display.value = display.value.slice(0, -1);
         }
 
-        // Tính toán kết quả (nút =)
+        // Tính toán kết quả (nút 😊
         function calculate() {
             try {
                 display.value = eval(display.value);
